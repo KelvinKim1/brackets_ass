@@ -30,9 +30,9 @@ typedef struct StackNode
 // A structure to represent a stack 
 typedef struct  {       
     unsigned capacity;
-	int top;	
-    //TODO: depending on the implementation - fill-in the fields of a struct
-}Stack; 
+	int top;
+    Bracket* array;
+}Stack;
 
 
 
@@ -40,13 +40,13 @@ typedef struct  {
 Stack* createStack(unsigned capacity);
 
 // Stack is full when top index is equal to capacity-1
-int isFull(Stack* stack);
+int isFull(Stack* stack, unsigned capacity);
 
 // Stack is empty when top is equal to -1 (or head of the list is NULL)
 int isEmpty(Stack* stack);
 
 // Function to add an item to stack.  
-void push(Stack* stack, Bracket item);
+void push(Stack* stack, Bracket item, unsigned capacity);
 
 // Function to remove an item from stack and return it. 
 Bracket pop(Stack* stack);     
