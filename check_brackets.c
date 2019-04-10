@@ -41,6 +41,8 @@ int main() {
             }
             if (isEmpty(opening_brackets_stack) == 1){
                 printf("My result is: %d", position+1);
+                free(opening_brackets_stack->array);
+                free(opening_brackets_stack);
                 return 0;
             }
             top = opening_brackets_stack->array[opening_brackets_stack->top];
@@ -48,6 +50,8 @@ int main() {
                 pop(opening_brackets_stack);
             } else {
                 printf("My result is: %d", position+1);
+                free(opening_brackets_stack->array);
+                free(opening_brackets_stack);
                 return 0;
             }
         }
@@ -55,9 +59,13 @@ int main() {
     
     if (isEmpty(opening_brackets_stack) == 0){
          printf("My result is: %d", (opening_brackets_stack->array[opening_brackets_stack->top]).position);
+        free(opening_brackets_stack->array);
+        free(opening_brackets_stack);
         return 0;
     }
     // Printing answer, write your code here
 	printf("My result is: Success");
+    free(opening_brackets_stack->array);
+    free(opening_brackets_stack);
     return 0;
 }
